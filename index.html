@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCI DES PRÊLES — Comptabilité v20260805</title>
+<title>AKAA IMMO — Comptabilité v20260805</title>
 <!-- ═══ FIREBASE SDK ═══ -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -491,7 +491,7 @@ textarea { font-family: var(--mono); font-size: 11px; resize: vertical; }
 <!-- LOGIN SCREEN -->
 <div id="login-screen">
   <div class="login-box">
-    <div class="login-logo">SCI DES PRÊLES</div>
+    <div class="login-logo">AKAA IMMO</div>
     <div class="login-sub">Outil de comptabilité — Accès sécurisé</div>
     <label>Mot de passe</label>
     <input type="password" id="login-pw" onkeydown="if(event.key==='Enter')doLogin()" autofocus>
@@ -502,7 +502,7 @@ textarea { font-family: var(--mono); font-size: 11px; resize: vertical; }
 
 <div id="app-wrapper" style="display:none;flex-direction:column;height:100vh;">
 <header class="hdr">
-  <div class="logo">SCI DES PRÊLES</div>
+  <div class="logo">AKAA IMMO</div>
   <div class="hdr-sep"></div>
   <div class="ex-selector">
     <span class="hdr-tag">EXERCICE</span>
@@ -4100,16 +4100,16 @@ function fmtEraw(n) { return parseFloat(n||0).toLocaleString('fr-FR',{minimumFra
 
 function rptHeader(title, subtitle) {
   return `<div class="rpt-header">
-    <img class="rpt-logo" src="${LOGO_SRC}" alt="Logo SCI des Prêles">
+    <img class="rpt-logo" src="${LOGO_SRC}" alt="Logo AKAA IMMO">
     <div class="rpt-title-block">
-      <div class="rpt-company">SCI DES PRÊLES</div>
+      <div class="rpt-company">AKAA IMMO</div>
       <div class="rpt-doc-title">${title}</div>
       <div class="rpt-meta">${subtitle} — Exercice ${CURRENT_YEAR} — Édité le ${new Date().toLocaleDateString('fr-FR')}</div>
     </div>
   </div>`;
 }
 function rptFooter() {
-  return `<div class="rpt-footer">SCI DES PRÊLES — Document généré automatiquement par l'outil de comptabilité — Exercice ${CURRENT_YEAR}</div>`;
+  return `<div class="rpt-footer">AKAA IMMO — Document généré automatiquement par l'outil de comptabilité — Exercice ${CURRENT_YEAR}</div>`;
 }
 
 // ── Aggregate ecritures by compte ──
@@ -6045,7 +6045,7 @@ function renderLocDocFooter(infoHtml) {
   <div style="border:1px solid #e84b0f;border-radius:4px;padding:14px 16px;margin-top:16px;font-size:11px;line-height:1.6;">
     <div style="font-weight:700;text-decoration:underline;font-style:italic;margin-bottom:8px;">Informations</div>
     ${infoHtml}
-    <div style="margin-top:10px;font-weight:700;color:#e84b0f;">Les gérants – SCI DES PRÊLES</div>
+    <div style="margin-top:10px;font-weight:700;color:#e84b0f;">Les gérants – AKAA IMMO</div>
     <div>M.MAUFROY</div>
     <div>M.CAMUS</div>
   </div>`;
@@ -6468,8 +6468,8 @@ function openMailModal() {
   document.getElementById('mail-to').value = loc.email || '';
   const labels = entries.map(e => e.type==='appel' ? `Appel de loyer — ${moisLabelFromYYYYMM(e.mois)}` : `Quittance — ${moisLabelFromYYYYMM(e.mois)}`);
   document.getElementById('mail-docs-list').innerHTML = `<strong>Documents sélectionnés (${entries.length}) :</strong><br>${labels.join('<br>')}`;
-  document.getElementById('mail-subject').value = `SCI DES PRÊLES — ${labels.length===1?labels[0]:'Documents locatifs'} — ${loc.adresse1}`;
-  document.getElementById('mail-body').value = `Bonjour,\n\nVeuillez trouver ci-joint ${entries.length>1?'les documents suivants':'le document suivant'} :\n${labels.map(l=>'- '+l).join('\n')}\n\nBien cordialement,\nLes gérants — SCI DES PRÊLES`;
+  document.getElementById('mail-subject').value = `AKAA IMMO — ${labels.length===1?labels[0]:'Documents locatifs'} — ${loc.adresse1}`;
+  document.getElementById('mail-body').value = `Bonjour,\n\nVeuillez trouver ci-joint ${entries.length>1?'les documents suivants':'le document suivant'} :\n${labels.map(l=>'- '+l).join('\n')}\n\nBien cordialement,\nLes gérants — AKAA IMMO`;
 
   if(!loc.email) toast('Aucune adresse e-mail enregistrée pour ce locataire — pensez à la renseigner dans sa fiche','warn');
   document.getElementById('mail-modal').style.display = 'flex';
